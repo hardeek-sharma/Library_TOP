@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,5 +8,31 @@
 
 html,
 body {
-  min-height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background-color: antiquewhite;
+  display: grid;
+  grid-template: min-content 1fr / 1fr;
+}
+
+h1 {
+  text-align: center;
+  font-size: 76px;
+  font-family: "Rubik Mono One";
+}
+
+.content {
+  padding: 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 350px);
+  gap: 40px;
+  justify-content: center;
+}
+
+.book {
+  height: 400px;
+  background-color: white;
+  border-radius: 15px;
 }
