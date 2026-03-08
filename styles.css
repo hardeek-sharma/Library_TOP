@@ -23,7 +23,7 @@ h1 {
   font-family: "Rubik Mono One";
 }
 
-.content {
+.container {
   padding: 80px;
   display: grid;
   grid-template-columns: repeat(4, 350px);
