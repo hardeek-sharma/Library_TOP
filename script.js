@@ -25,12 +25,15 @@ function displayLibrary() {
     libraryContainer.appendChild(card);
 
     let titleBox = document.createElement('div');
+    titleBox.classList.add('titleBox');
     titleBox.textContent = book.title;
 
     let authorBox = document.createElement('div');
+    authorBox.classList.add('authorBox');
     authorBox.textContent = book.author;
 
     let pagesBox = document.createElement('div');
+    pagesBox.classList.add('pagesBox');
     pagesBox.textContent = book.pages;
 
     card.append(titleBox, authorBox, pagesBox);
