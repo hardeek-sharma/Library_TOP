@@ -23,15 +23,14 @@ h1 {
   font-family: "Rubik Mono One";
 }
 
-.container {
+#container {
   padding: 80px;
   display: grid;
   grid-template-columns: repeat(4, 350px);
   gap: 40px;
-  justify-content: center;
 }
 
-.card {
+.book-card {
   height: 400px;
   background-color: white;
   border-radius: 15px;
