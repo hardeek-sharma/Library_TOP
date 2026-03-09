@@ -1,4 +1,5 @@
 const myLibrary = [];
+let libraryContainer = document.querySelector('#container');
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -13,3 +14,27 @@ function addBookToLibrary(title, author, pages, read) {
 
   myLibrary.push(newBook);
 }
+
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+
+function displayLibrary() {
+  myLibrary.forEach((book) => {
+    let card = document.createElement('div');
+    card.classList.add('book-card');
+    libraryContainer.appendChild(card);
+
+    let titleBox = document.createElement('div');
+    titleBox.textContent = book.title;
+
+    let authorBox = document.createElement('div');
+    authorBox.textContent = book.author;
+
+    let pagesBox = document.createElement('div');
+    pagesBox.textContent = book.pages;
+
+    card.append(titleBox, authorBox, pagesBox);
+  });
+}
+
+displayLibrary();
