@@ -14,6 +14,15 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+openBtn.addEventListener('click', () => {
+  dialog.showModal();
+  console.log("'+ Add Book' button clicked");
+});
+
+submitBtn.addEventListener('click', () => {
+  
+});
+
 function addBookToLibrary(title, author, pages, read) {
   let newBook = new Book(title, author, pages, read);
   newBook.id = crypto.randomUUID();
