@@ -36,6 +36,12 @@ h1 {
   margin-bottom: 40px;
 }
 
+dialog {
+  margin: auto;
+  width: 350px;
+  height: 400px;
+}
+
 #add-book {
   background-color: #38b6ff;
   border: none;
