@@ -1,6 +1,12 @@
 const myLibrary = [];
 let libraryContainer = document.querySelector('#container');
 
+let dialog = document.querySelector('#book-dialog');
+let openBtn = document.querySelector('#add-book');
+let readBtn = document.querySelector('#read-btn');
+let cancelBtn = document.querySelector('#cancel-btn');
+let submitBtn = document.querySelector('#submit-btn');
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
