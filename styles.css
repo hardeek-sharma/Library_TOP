@@ -36,7 +36,7 @@ h1 {
   margin-bottom: 40px;
 }
 
-.add-book {
+#add-book {
   background-color: #38b6ff;
   border: none;
   justify-self: center;
