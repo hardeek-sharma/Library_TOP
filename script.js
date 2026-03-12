@@ -2,6 +2,10 @@ const myLibrary = [];
 let libraryContainer = document.querySelector('#container');
 
 let dialog = document.querySelector('#book-dialog');
+let titleText = document.querySelector('#title');
+let authorText = document.querySelector('#author');
+let pagesText = document.querySelector('#pages');
+
 let openBtn = document.querySelector('#add-book');
 let readBtn = document.querySelector('#read-btn');
 let cancelBtn = document.querySelector('#cancel-btn');
@@ -20,7 +24,10 @@ openBtn.addEventListener('click', () => {
 });
 
 submitBtn.addEventListener('click', () => {
-  
+  if ((titleText.value != '') && (authorText.value != '') && (pagesText.value != '')) {
+    addBookToLibrary(titleText.value, authorText.value, pagesText.value, true);
+    console.log(myLibrary);
+  }
 });
 
 function addBookToLibrary(title, author, pages, read) {
@@ -28,15 +35,26 @@ function addBookToLibrary(title, author, pages, read) {
   newBook.id = crypto.randomUUID();
 
   myLibrary.push(newBook);
+
+  displayLibrary();
 }
 
 addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
 addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
 
+function resetLibrary() {
+  let bookCards = document.querySelectorAll('.book-card');
+  bookCards.forEach((bookCard) => {
+    bookCard.remove();
+  });
+}
+
 function displayLibrary() {
+  resetLibrary();
   myLibrary.forEach((book) => {
     let card = document.createElement('div');
     card.classList.add('book-card');
+    card.dataset.index = book.id;
     libraryContainer.appendChild(card);
 
     let titleBox = document.createElement('div');
