@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 let libraryContainer = document.querySelector('#container');
 
 let dialog = document.querySelector('#book-dialog');
@@ -41,6 +41,28 @@ function addBookToLibrary(title, author, pages, read) {
 
 addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
 addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
+addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
+addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
 
 function resetLibrary() {
   let bookCards = document.querySelectorAll('.book-card');
@@ -69,7 +91,28 @@ function displayLibrary() {
     pagesBox.classList.add('pagesBox');
     pagesBox.textContent = book.pages;
 
-    card.append(titleBox, authorBox, pagesBox);
+    let buttonHolder = document.createElement('div');
+    buttonHolder.classList.add('button-holder');
+
+    let removeBtn = document.createElement('button');
+    removeBtn.classList.add('remove-button');
+    removeBtn.textContent = 'REMOVE';
+    removeBtn.addEventListener('click', (e) => {
+      console.log('remove button clicked');
+      let removingCard = e.target.closest('.book-card');
+      removingCard.remove();
+      let removingId = String(removingCard.dataset.index);
+      console.log(removingId);
+      myLibrary.forEach((book) => {
+        if (book.id == removingId) {
+          myLibrary.splice(myLibrary.indexOf(book), 1);
+        }
+      });
+      console.log(myLibrary);
+    });
+
+    card.append(titleBox, authorBox, pagesBox, buttonHolder);
+    buttonHolder.append(removeBtn);
   });
 }
 
