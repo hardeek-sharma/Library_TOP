@@ -41,28 +41,6 @@ function addBookToLibrary(title, author, pages, read) {
 
 addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
 addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
-addBookToLibrary('Red Rising', 'Pierce Brown', 438, true);
-addBookToLibrary('Golden Son', 'Pierce Brown', 442, true);
 
 function resetLibrary() {
   let bookCards = document.querySelectorAll('.book-card');
