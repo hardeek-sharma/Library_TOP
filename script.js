@@ -2,6 +2,7 @@ let myLibrary = [];
 let libraryContainer = document.querySelector('#container');
 
 let dialog = document.querySelector('#book-dialog');
+let form = document.querySelector('form');
 let titleText = document.querySelector('#title');
 let authorText = document.querySelector('#author');
 let pagesText = document.querySelector('#pages');
@@ -28,7 +29,14 @@ submitBtn.addEventListener('click', () => {
     addBookToLibrary(titleText.value, authorText.value, pagesText.value, true);
     console.log(myLibrary);
   }
+  form.reset();
+  dialog.close();
 });
+
+cancelBtn.addEventListener('click', () => {
+  dialog.close();
+  form.reset();
+})
 
 function addBookToLibrary(title, author, pages, read) {
   let newBook = new Book(title, author, pages, read);
