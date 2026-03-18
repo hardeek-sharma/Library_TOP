@@ -19,18 +19,37 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+Book.prototype.changeStatus = function() {
+  if (this.read) {
+    this.read = false;
+  } else {
+    this.read = true;
+  }
+}
+
 openBtn.addEventListener('click', () => {
   dialog.showModal();
   console.log("'+ Add Book' button clicked");
 });
 
+readBtn.addEventListener('click', () => {
+  readBtn.classList.toggle('read');
+  if (readBtn.classList.contains('read')) {
+    readBtn.value = true;
+    readBtn.textContent = 'Read';
+  } else {
+    readBtn.value = false;
+    readBtn.textContent = 'Unread';
+  }
+});
+
 submitBtn.addEventListener('click', () => {
   if ((titleText.value != '') && (authorText.value != '') && (pagesText.value != '')) {
-    addBookToLibrary(titleText.value, authorText.value, pagesText.value, true);
+    addBookToLibrary(titleText.value, authorText.value, pagesText.value, readBtn.value === 'true');
     console.log(myLibrary);
+    form.reset();
+    dialog.close();
   }
-  form.reset();
-  dialog.close();
 });
 
 cancelBtn.addEventListener('click', () => {
