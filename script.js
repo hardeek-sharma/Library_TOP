@@ -8,7 +8,7 @@ let authorText = document.querySelector('#author');
 let pagesText = document.querySelector('#pages');
 
 let openBtn = document.querySelector('#add-book');
-let readBtn = document.querySelector('#read-btn');
+let readBtnForm = document.querySelector('#read-btn-form');
 let cancelBtn = document.querySelector('#cancel-btn');
 let submitBtn = document.querySelector('#submit-btn');
 
@@ -32,20 +32,20 @@ openBtn.addEventListener('click', () => {
   console.log("'+ Add Book' button clicked"); // TEST
 });
 
-readBtn.addEventListener('click', () => {
-  readBtn.classList.toggle('read');
-  if (readBtn.classList.contains('read')) {
-    readBtn.value = true;
-    readBtn.textContent = 'Read';
+readBtnForm.addEventListener('click', () => {
+  readBtnForm.classList.toggle('read');
+  if (readBtnForm.classList.contains('read')) {
+    readBtnForm.value = true;
+    readBtnForm.textContent = 'Read';
   } else {
-    readBtn.value = false;
-    readBtn.textContent = 'Unread';
+    readBtnForm.value = false;
+    readBtnForm.textContent = 'Unread';
   }
 });
 
 submitBtn.addEventListener('click', () => {
   if ((titleText.value != '') && (authorText.value != '') && (pagesText.value != '')) {
-    addBookToLibrary(titleText.value, authorText.value, pagesText.value, readBtn.value === 'true');
+    addBookToLibrary(titleText.value, authorText.value, pagesText.value, readBtnForm.value === 'true');
     console.log(myLibrary); // TEST
     form.reset();
     dialog.close();
