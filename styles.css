@@ -40,6 +40,56 @@ dialog {
   margin: auto;
   width: 350px;
   height: 400px;
+  border: 2px solid #38b6ff;
+  border-radius: 5px;
+}
+
+form {
+  height: 100%;
+  width: 100%;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-rows: repeat(3, 50px) 50px;
+  gap: 10px;
+}
+
+.form-section {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: 4px;
+}
+
+.button-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+form button {
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 5px;
+  transition: all 100ms;
+}
+
+form button:hover {
+  border: 1px solid rgba(128, 128, 128, 0);
+  box-shadow: 0 0 5px rgba(128, 128, 128);
+}
+
+#submit-btn {
+  background-color: #38b6ff;
+  color: white;
+}
+
+#cancel-btn {
+  background-color: rgb(255, 46, 46);
+  color: white;
+}
+
+.read {
+  background-color: rgb(52, 255, 52);
+  color: white;
 }
 
 #add-book {
@@ -67,3 +117,4 @@ dialog {
   border-radius: 15px;
   font-family: Roboto;
 }
+
