@@ -29,7 +29,7 @@ Book.prototype.changeStatus = function() {
 
 openBtn.addEventListener('click', () => {
   dialog.showModal();
-  console.log("'+ Add Book' button clicked");
+  console.log("'+ Add Book' button clicked"); // TEST
 });
 
 readBtn.addEventListener('click', () => {
@@ -46,7 +46,7 @@ readBtn.addEventListener('click', () => {
 submitBtn.addEventListener('click', () => {
   if ((titleText.value != '') && (authorText.value != '') && (pagesText.value != '')) {
     addBookToLibrary(titleText.value, authorText.value, pagesText.value, readBtn.value === 'true');
-    console.log(myLibrary);
+    console.log(myLibrary); // TEST
     form.reset();
     dialog.close();
   }
@@ -99,9 +99,27 @@ function displayLibrary() {
     let buttonHolder = document.createElement('div');
     buttonHolder.classList.add('button-holder');
 
+    let readBtnCard = document.createElement('button');
+    readBtnCard.classList.add('read-btn-card');
+    if (book.read) {
+      readBtnCard.classList.add('read');
+      readBtnCard.textContent = 'Read';
+    } else {
+      readBtnCard.textContent = 'Unread';
+    }
+    readBtnCard.addEventListener('click', () => {
+      readBtnCard.classList.toggle('read');
+      book.changeStatus();
+      if (book.read) {
+        readBtnCard.textContent = 'Read';
+      } else {
+        readBtnCard.textContent = 'Unread';
+      }
+    });
+
     let removeBtn = document.createElement('button');
     removeBtn.classList.add('remove-button');
-    removeBtn.textContent = 'REMOVE';
+    removeBtn.textContent = 'Remove';
     removeBtn.addEventListener('click', (e) => {
       console.log('remove button clicked');
       let removingCard = e.target.closest('.book-card');
@@ -113,11 +131,11 @@ function displayLibrary() {
           myLibrary.splice(myLibrary.indexOf(book), 1);
         }
       });
-      console.log(myLibrary);
+      console.log(myLibrary); // TEST
     });
 
     card.append(titleBox, authorBox, pagesBox, buttonHolder);
-    buttonHolder.append(removeBtn);
+    buttonHolder.append(readBtnCard, removeBtn);
   });
 }
 
