@@ -66,14 +66,16 @@ form {
   margin-top: 10px;
 }
 
-form button {
-  border: 1px solid rgb(128, 128, 128);
+button {
+  border: none;
   border-radius: 5px;
   transition: all 100ms;
+  background-color: rgb(255, 46, 46);
+  color: white;
 }
 
-form button:hover {
-  border: 1px solid rgba(128, 128, 128, 0);
+button:hover {
+  border: none;
   box-shadow: 0 0 5px rgba(128, 128, 128);
 }
 
@@ -83,12 +85,13 @@ form button:hover {
 }
 
 #cancel-btn {
-  background-color: rgb(255, 46, 46);
+  background-color: rgb(128, 128, 128);
   color: white;
 }
 
 .read {
   background-color: rgb(52, 255, 52);
+  color: black;
 }
 
 #add-book {
@@ -115,5 +118,36 @@ form button:hover {
   background-color: white;
   border-radius: 15px;
   font-family: Roboto;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: repeat(3, min-content) 50px;
+  gap: 40px;
+  justify-items: center;
+  align-content: center;
 }
 
+.titleBox {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.authorBox,
+.pagesBox {
+  font-size: 20px;
+}
+
+.button-holder {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  justify-content: center;
+  gap: 10px;
+}
+
+.button-holder button {
+  border-radius: 5px;
+}
+
+.remove-button {
+  background-color: rgba(128, 128, 128);
+}

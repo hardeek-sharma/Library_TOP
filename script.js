@@ -86,15 +86,15 @@ function displayLibrary() {
 
     let titleBox = document.createElement('div');
     titleBox.classList.add('titleBox');
-    titleBox.textContent = book.title;
+    titleBox.textContent = `"${book.title}"`;
 
     let authorBox = document.createElement('div');
     authorBox.classList.add('authorBox');
-    authorBox.textContent = book.author;
+    authorBox.textContent = `By ${book.author}`;
 
     let pagesBox = document.createElement('div');
     pagesBox.classList.add('pagesBox');
-    pagesBox.textContent = book.pages;
+    pagesBox.textContent = `${book.pages} Pages`;
 
     let buttonHolder = document.createElement('div');
     buttonHolder.classList.add('button-holder');
